@@ -114,7 +114,7 @@ def par2dict(name, substitutions={'F0': 'F', 'F1': 'FDOT', 'F2': 'FDOT2',
             e['FB'] = e.pop('PB')/pb*d['FB']
             f['FB'] = f.pop('PB')
             if 'PBDOT' in d.keys():
-                d['FBDOT'] = d.pop('PBDOT')/pb*d['FB']
+                d['FBDOT'] = -d.pop('PBDOT')/pb*d['FB']
                 e['FBDOT'] = e.pop('PBDOT')/pb*d['FB']
                 f['FBDOT'] = f.pop('PBDOT')
     return d, e, f
@@ -165,24 +165,24 @@ if __name__ == '__main__':
     mjd = Time(mjd, format='mjd', scale='utc', 
                lon=(74*u.deg+02*u.arcmin+59.07*u.arcsec).to(u.deg).value,
                lat=(19*u.deg+05*u.arcmin+47.46*u.arcsec).to(u.deg).value)
+    
 
-
-
-#frequency and period of pulsar(constants)
+    #frequency and period of pulsar(constants)
     f_p=eph1957.evaluate('F',mjd.tdb.mjd,t0par='PEPOCH')
     p_p=1./(f_p[0])
 
- #period for every 1000 pulse in days
-    finish=1./24
-    q=0
-    while (q<finish):
+    #period for every 1000 pulse in days
+    end =1./24
+    time=mjd.tdb.mjd
+    finish= time+end
+    while (time<finish):
         p_thousand=(1000*p_p)/86400
         steps=finish/(p_thousand)
         mjd = Time('2013-05-16 23:45:00', scale='utc').mjd+np.linspace(0.,finish, steps)
         mjd = Time(mjd, format='mjd', scale='utc', 
                    lon=(74*u.deg+02*u.arcmin+59.07*u.arcsec).to(u.deg).value,
                    lat=(19*u.deg+05*u.arcmin+47.46*u.arcsec).to(u.deg).value)
-        q+=steps
+        time+=steps
 
 
     # orbital delay and velocity (lt-s and v/c)
@@ -218,29 +218,34 @@ if __name__ == '__main__':
     v_topo = np.sum(vel_gmrt*dir_1957, axis=0)
     delay = d_topo + d_earth + d_orb
     rv = ((-1)*(v_topo)) - v_earth + v_orb
- 
+
+    
+
     #L is the coefficient for finding Doppler frequency - Doppler shifting frequency- Doppler Shifting Period 
     L=(1/(1+rv))
+    #Doppler frequency
     f_dp=(f_p[0])*L
+    #Doppler period
     p_dp=1./(f_dp)
- #average of the doppler periods
+    #average of the doppler periods
     avg=sum(p_dp)/(len(p_dp))
- #TOA residual
-    i=169.87
+    #TOA residual
+    i=4.0266
     toe_res=(340-0.008*(i-120)**2)*avg
- #difference between period and Doppler period- average of this difference
-    diff=abs((p_dp)-(p_p))
-    avg1=sum(diff)/(len(diff))
- #arrival time of the pulses
-    t=mjd.tdb.mjd
- #changing the delay which is initially in seconds to days units
-    delay_day=delay/86400
-    arrival=t+delay_day
+    #difference between period and Doppler period- average of this difference
+    doppler_delay=abs((p_dp)-(p_p))
+    avg1=sum(doppler_delay)/(len(doppler_delay))
+    
 
- #creating tables to display arrival times and delays
+    #changing the delay which is initially in seconds to days units
+    delay_day=(delay+doppler_delay)/86400
+    arrival=time+delay_day
+    #getting a new sample rate to fit into our period relation for the fortran(read_gmrt.f90) code
+    s_new=((33333333.3333)*(1.60731438719155/1000*(1-4*3.252e-07)))/avg
+    #creating tables to display arrival times and delays
     tab = Table([arrival, delay_day] , names=('arrival times', 'delay(days)'), meta={'name': 'first table'})
     print(tab)
-    
+   
 #t is the universal time obtaind from changing India time
     #t=Time(mjd+(5.5/24))
 
@@ -277,3 +282,4 @@ if __name__ == '__main__':
         plt.plot(mjd.utc.mjd, (rv-rf_rv-v_orb)*c.to(u.km/u.s).value)
         plt.draw()
         plt.show()
+
