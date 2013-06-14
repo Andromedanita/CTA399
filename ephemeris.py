@@ -169,20 +169,20 @@ if __name__ == '__main__':
 
     #frequency and period of pulsar(constants)
     f_p=eph1957.evaluate('F',mjd.tdb.mjd,t0par='PEPOCH')
-    p_p=1./(f_p[0])
+    p_p=1./(f_p)
 
     #period for every 1000 pulse in days
     end =1./24
     time=mjd.tdb.mjd
     finish= time+end
-    while (time<finish):
-        p_thousand=(1000*p_p)/86400
-        steps=finish/(p_thousand)
-        mjd = Time('2013-05-16 23:45:00', scale='utc').mjd+np.linspace(0.,finish, steps)
-        mjd = Time(mjd, format='mjd', scale='utc', 
-                   lon=(74*u.deg+02*u.arcmin+59.07*u.arcsec).to(u.deg).value,
-                   lat=(19*u.deg+05*u.arcmin+47.46*u.arcsec).to(u.deg).value)
-        time+=steps
+   # while (time<finish):
+    p_thousand=(1000*p_p)/86400
+    steps=finish/(p_thousand)
+    #mjd = Time('2013-05-16 23:45:00', scale='utc').mjd+np.linspace(0.,finish, steps)
+    #mjd = Time(mjd, format='mjd', scale='utc', 
+     #          lon=(74*u.deg+02*u.arcmin+59.07*u.arcsec).to(u.deg).value,
+      #         lat=(19*u.deg+05*u.arcmin+47.46*u.arcsec).to(u.deg).value)
+    #    time+=steps
 
 
     # orbital delay and velocity (lt-s and v/c)
@@ -240,6 +240,8 @@ if __name__ == '__main__':
     #changing the delay which is initially in seconds to days units
     delay_day=(delay+doppler_delay)/86400
     arrival=time+delay_day
+    t=Time(arrival, format='mjd', scale='utc')
+    arrival=t.iso
     #getting a new sample rate to fit into our period relation for the fortran(read_gmrt.f90) code
     s_new=((33333333.3333)*(1.60731438719155/1000*(1-4*3.252e-07)))/avg
     #creating tables to display arrival times and delays
@@ -282,4 +284,6 @@ if __name__ == '__main__':
         plt.plot(mjd.utc.mjd, (rv-rf_rv-v_orb)*c.to(u.km/u.s).value)
         plt.draw()
         plt.show()
+
+
 
