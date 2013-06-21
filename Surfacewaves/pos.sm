@@ -1,0 +1,18 @@
+dev x11
+dev postencap pos.eps
+erase
+expand 1.5
+lweight 2
+data pos.dat.all
+read { dx 1 }
+set ldx=lg(abs(dx))
+set bin=0.5,3.5,0.1
+set nx=histogram(ldx:bin)
+set lnx=lg(nx+1)-bin-2
+limits bin lnx
+#limits bin 2 3.7
+histogram bin lnx
+ticksize -1 0 -1 0
+box
+xlabel displacement
+ylabel number of images

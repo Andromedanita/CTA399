@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: swave-4-4.aux
+The style file: mn2e.bst
+Database file #1: swave.bib
+Repeated entry---line 208 of file swave.bib
+ : @article{2004MNRAS.354...43W
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 421 of file swave.bib
+ : @article{1957RSPTA.249..321L
+ :                             ,
+I'm skipping whatever remains of this entry
+Warning--can't use both author and editor fields in 2004hpa..book.....L
+Warning--empty publisher in 2004hpa..book.....L
+You've used 22 entries,
+            2601 wiz_defined-function locations,
+            691 strings with 7935 characters,
+and the built_in function-call counts, 9187 in all, are:
+= -- 905
+> -- 647
+< -- 10
++ -- 219
+- -- 219
+* -- 887
+:= -- 1711
+add.period$ -- 0
+call.type$ -- 22
+change.case$ -- 161
+chr.to.int$ -- 22
+cite$ -- 24
+duplicate$ -- 241
+empty$ -- 357
+format.name$ -- 255
+if$ -- 1657
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 23
+newline$ -- 69
+num.names$ -- 88
+pop$ -- 116
+preamble$ -- 1
+purify$ -- 183
+quote$ -- 0
+skip$ -- 304
+stack$ -- 0
+substring$ -- 468
+swap$ -- 23
+text.length$ -- 0
+text.prefix$ -- 73
+top$ -- 0
+type$ -- 195
+warning$ -- 2
+while$ -- 85
+width$ -- 0
+write$ -- 219
+(There were 2 error messages)

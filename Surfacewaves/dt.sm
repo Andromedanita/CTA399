@@ -1,0 +1,19 @@
+dev x11
+#dev postencap dt.eps
+lweight 2
+expand 1.5
+window 1 -2 1 1
+data dt.dat
+read { y 1 }
+set x=1,DIMEN(y)
+limits x y
+connect x y
+box
+window 1 -2 1 2
+data dt.dat
+lines 1800 2200
+read { y 1 }
+set x=1,DIMEN(y)
+limits x y
+connect x y
+box 4 2 1 0

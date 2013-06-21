@@ -1,0 +1,298 @@
+\documentclass[useAMS,usenatbib]{mn2e}
+
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{lscape} % Allows landscape environment to be used
+
+\def\gtrsim{\mathrel{\hbox{\rlap{\hbox{\lower4pt\hbox{$\sim$}}}\hbox{$>$}}}}
+
+
+\title[Interstellar Plasma Scattering]{
+Origin of Interstellar Scintillations
+}
+\author[Pen et al]{Ue-Li
+  Pen,$^{1}$\thanks{E-mail:\ pen@cita.utoronto.ca}
+Yuri Levin,$^2$\thanks{E-mail:\ yuri.levin@monash.edu}
+}
+\begin{document}
+
+
+\date{\today}
+
+\pagerange{\pageref{firstpage}--\pageref{lastpage}} 
+\pubyear{2012}
+
+\maketitle
+\label{firstpage}
+\begin{abstract}
+We show that surface waves along aligned interstellar current sheets
+lead to pulsar scintillation properties consistent with those
+observed.  In this picture, the interstellar medium is quiescent, with
+scintillation and scattering resulting from weak waves propagating
+along magnetic domain boundaries, which are expected from helicity
+conservation.  This model quantitatively predicts the spacing and
+amplitudes of inverted parabolic arcs.
+\end{abstract}
+\begin{keywords}
+Interstellar Medium, reconnection, extreme scattering events
+\end{keywords}
+
+\newcommand{\be}{\begin{eqnarray}}
+\newcommand{\ee}{\end{eqnarray}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+
+\section{Introduction}
+
+The structure of the interstellar medium has remained enigmatic. Five
+decades of pulsar scintillation observations\cite{1968Natur.218..920S}
+have resulted in problematic physical requirements.  Current
+observations have demonstrated that much of the scattering is
+dominated by a small number of very localized lensing
+screens\citep{2010ApJ...708..232B}.  With the lensing screen, the
+scattering is in turn dominated by spatially localized structures.
+This is inconsistent with random diffractive processes in an extended
+turbulent medium.
+
+\section{Two Regimes of Lensing: Diffractive vs Refractive}
+
+Two regimes to generate pulsar scintillation have been considered. In
+the diffractive picture, the lensing angle is determined by the size
+of structure in the medium, compared to the wavelength $\lambda$:
+$\theta=2\pi\lambda k$.  The amplitude of each scattered structure is
+determined by the depth of the modulation.  To explain the observed
+angles in the range $1-100$ mas at wavelength $\sim 1$m, requires
+structures in the ISM on scales of order $10^{6-8}$m. This might seem
+surprising, since it is much smaller than the coloumb mean free path
+of free electrons in the interstellar medium.
+
+A second mechanism is due to refractive lensing.  In this scenario,
+the bending angle is determined by Snell's law, i.e. the change in
+refractive index and the angles of incidence.  The flux of the images
+is determined by the size of the lens over the impact parameter.
+
+\cite{2006ApJ...640L.159G} showed that refractive lensing results in
+scintillation similar to the diffractive picture.  In this refractive
+lensing, localized refractive images act like a multiple slit
+interferometer. The beating of these images results in the rapid
+frequency and time variability, and has scalings very similar to the
+purely diffractive picture. 
+
+The discovery of parabolic arcs\citep{2001ApJ...549L..97S} and
+inverted arclets has required the existence of localized refractive
+lenses.  Direct VLBI imaging of the scattering
+screen\citep{2010ApJ...708..232B} demonstrate the presence of
+discrete isolated lenses, i.e. scattering points, which are all in a
+single thin sheet. This leads to physical challenges of confining
+these lenses. Various solutions have been
+proposed\citep{2007ASPC..365..299W,2012MNRAS.421L.132P,2006ApJ...640L.159G}.
+
+
+
+
+\section{Astrophysical Picture}
+
+The interstellar medium is stirred on scales of parsecs by various
+energetic processes, including supernovae, ionization fronts, spiral
+density waves, and other phenomena.  These processes are generally
+short lived, and after the stirring, the warm medium relaxes to an
+equilibrium configuration.  In the presence of helicity, the
+equilibrium magnetic fields are configured as interlaced twisted tori,
+which are long lived\citep{2004Natur.431..819B}.  The magnetic fields
+are locally almost parallel, with discontinuous interface regions, a
+bit like magnetic domains in a ferromagnetp\cite{2009arXiv0909.1815G}.
+
+At the boundary between between magnetic field configurations, current
+sheets maintain the discontinuities.  These current sheets have been
+proposed to dominate the scattering of radio
+sources\citep{2006ApJ...640L.159G}.  
+
+\section{Surface Dynamics}
+
+The current sheet is physically thin, $< \sim $ AU.  On each side the
+magnetic field points in a different direction.  The change in alvenic
+properties gives rise to surface
+wave\citep{1991SoPh..133..263J,2009GApFD.103...89J}, which are
+analogous to deep water ocean waves.  The restoring force is the
+difference in magnetic field component projected along the wave
+vector.  Like ocean waves, these waves penetrate about a wavelength
+into each side.  We will be considering wavelengths of thousands of
+AU, so the current sheet itself is neglible as far as the dynamics of
+the waves are concerned.  Seen in projection along the aligned sheet,
+the projected wavelengths will be $\sim $ AU.  The displacements are
+transverse to the wave vector, and perpendicular to the sheet.  While
+alvenic in nature, the surface modes possess only one polarization,
+unlike bulk waves.  These waves resemble a flag blowing in the wind.
+Disturbances travelling along the sheet are decoupled from bulk waves.
+Being confined to a sheet, the amplitude away from a source drops as
+$\propto 1/r$ instead of the normal inverse square law.  A amplitude
+of order $\alpha \lambda$, or about $10^{-3}$ of the wavelength is
+sufficient to cause the sheet to appear folded in projection.
+
+\section{Fold Statistics}
+
+Alven waves dissipate on scales shorter than the proton mean free
+path.  We thus model the waves as a displacement function $\zeta(x)$
+which is a Gaussian random field with a correlation function that is a
+Gaussian, $\xi(r)=\langle \zeta(x)
+\zeta(x+r)\rangle=\exp(-r^2/2/\sigma^2)$, where $\sigma$ is the
+dissipation scale.  Figure \ref{fig:sheet} shows a realization of a
+sheet with a random fluctuations.
+
+\begin{figure}
+\centerline{\epsfig{file=sheet.eps,width=3in}}
+\caption{Sheet with transverse perturbations.  The upper panel shows
+  an zoomed version of a short section.}
+\label{fig:sheet}
+\end{figure}
+
+In projection, the surface density results in a highly non-Gaussian
+distribution. Figure \ref{fig:rho} shows the density distribution in a
+simulation.  Folds occur when the gradient of the displacement is
+equal to minus 1.  The correlation function of the gradients is the
+second derivative of the displacements.  The number of crossings of -1
+depends on the variance of the gradient field.  The density of the
+folded sheet is proportionate to the length of gradient spent in the
+vicinity of -1, which is turn is proportionate to the reciprocal of
+the derivative of the gradient.  This second derivative is also a
+Gaussian random field.  The second derivative is uncorrelated with the
+first derivative.  The one point PDF of the reciprocal of a Gaussian
+variable is
+\beq
+P(\rho)=\frac{\exp(-\frac{1}{2 \rho^2})}{\sqrt{2\pi}\rho^2}.
+\eeq
+This is a highly non-Gaussian distribution, and resembles.  The very
+high tails are 
+cut off by higher order derivatives of the correlation function.
+
+\begin{figure}
+\centerline{\epsfig{file=rho.eps,width=3in}}
+\caption{projected density}
+\label{fig:rho}
+\end{figure}
+
+These high density caustics give rise to refractive lensing processes
+which resemble the inverted parabolic arcs in pulsar secondary
+spectra.
+
+\section{Lensing}
+
+The lensing of this density sheet can be computed in analogy to 
+\cite{2012MNRAS.421L.132P}.
+
+\begin{figure}
+\centerline{\epsfig{file=dt.eps,width=3in}}
+\caption{deflection angle mapping}
+\label{fig:dt}
+\end{figure}
+
+\section{Simulated Dynamic Spectra}
+
+With the density field, we can solve the lens equations to simulate
+dynamic spectra. 
+
+\begin{figure}
+\centerline{\includegraphics[width=3.5in]{rspect.jpg}}
+\caption{dynamic pulsar spectrum.  Horizontal axis is time, vertical
+  axis is frequency.  We reproduce the characteristic criss-cross
+  pattern observed in real scintillation spectra.}
+\label{fig:ds}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics[width=3.5in]{sspect.jpg}}
+\caption{secondary pulsar spectrum.  The inverted parabolic arcs arise
+naturally in this model.}
+\label{fig:ss}
+\end{figure}
+
+\section{Discussion}
+
+We can estimate the length scales involved.  This theory requires as
+input a current sheet thickness, inclination angle, curvature,
+amplitude of waves, and dissipation scale.
+
+The thickness of the sheets is determined by the magnification of
+images: the flux is roughly the thickness divided by the impact
+parameter.  It suggests a typical tickness of $h\sim 0.1$ AU.  A wave
+of projected wavelength $\alpha \lambda$ enhances projected densities
+by a factor $w=\sqrt{h \alpha \lambda}$.  The projected wavelengths
+are known to be of order $\sim 10$ AU, so $w \sim 10$.  The largest
+deflection angles are $\gamma \sim 0.1$ mas, which requires a
+projected electron density change $\delta n_e/(w\alpha) \sim$.  In an
+underdense sheet, the maximal change of density is the density itself.
+For the mean interstellar medium densities determined from pulsar
+dispersion, we obtain $\alpha \sim 10^{-2}$.  The probability of
+seeing a sheet at such an angle is $\sim \alpha^2$, requiring the
+existence of $\sim 1/\alpha^2$ sheets along the line of sight.  For
+B0834+06, the distance is $\sim 1$ kpc, giving a typical sheet
+separation of $s \sim 0.1$ pc.  If we assume the curvature to be
+separation (it could be smaller), we find a limiting projection angle
+$\alpha_{\rm min} = \sqrt{h/s} \sim 0.002$.  The wave amplitudes must
+be $> \alpha \lambda$ in order to form projected caustics.  This is a
+small amplitude, which rules out large amplitude universal turbulence.
+The latter would deform the sheet too much.  In a Kolmogorov spectrum,
+the energy power spectrum scales as $k^{-5/3}$.  Scaling from the
+alven damping scale to the fresnel scale, this results in density
+fluctuations $< 10^{-4}$.  This is insufficient to create
+scintillation in pulsar fluxes.
+
+These estimates are qualitative.  One expects current sheets to come
+in a range of sizes, curvature and perturbation amplitude.  The
+thickness might also vary, unless due to global resistivity.
+% 1 kpc = 3e19m
+% fresnel scale = 5e9m, 2e-10 radians, 0.04 mas
+% for n_e = 0.03, T=10,000K MFP=1/(n \sigma)
+% sigma=(1e-7 log lambda)^2 cm^2 = 1e-12 cm^2, mfp=3e13 cm = 3e11m
+% 1 AU = 1.5e11 m
+
+
+\section{Conclusions}
+
+We have presented a quantitative theory of pulsar scintillation
+inverse parabolic arcs.  These extend recent ideas of thin current
+sheets, which naturally explain the large angle scattering observed in
+pulsars and some extragalactic sources.
+
+This picture could explain all scintillation phenomena with structures
+greater than 0.1 AU.  The apparent diffractive structure results from
+the interference between refractive images, and no diffractive
+scattering is needed.
+
+\section{Acknowledgements}
+
+U-LP thanks NSERC and CAASTRO for support.
+
+
+\newcommand{\araa}{ARA\&A}   % Annual Review of Astronomy and Astrophys.
+\newcommand{\afz}{Afz}       % Astrofizica
+\newcommand{\aj}{AJ}         % Astronomical Journal
+\newcommand{\azh}{AZh}       % Astronomicekij Zhurnal
+\newcommand{\aaa}{A\&A}      % Astronomy and Astrophysics
+\newcommand{\aas}{A\&AS}     % Astronomy and Astrophys. Supplement Series
+\newcommand{\aar}{A\&AR}     % Astronomy and Astrophysics Review
+\newcommand{\apj}{ApJ}       % Astrophysical Journal
+\newcommand{\apjs}{ApJS}     % Astrophysical Journal Supplement Series
+\newcommand{\apjl}{ApJ}      % Astrophysical Journal Letters
+\newcommand{\apss}{Ap\&SS}   % Astrophysics and Space Science
+\newcommand{\baas}{BAAS}     % Bulletin of the American Astron. Society
+\newcommand{\jaa}{JA\&A}     % Journal of Astronomy and Astrophysics
+\newcommand{\mnras}{MNRAS}   % Monthly Notices of the Roy. Astron. Society
+\newcommand{\nat}{Nat}       % Nature
+\newcommand{\pasj}{PASJ}     % Publ. of the Astron. Society of Japan
+\newcommand{\pasp}{PASP}     % Publ. of the Astron. Society of the Pacific
+\newcommand{\paspc}{PASPC}   % Publ. Astron. Soc. Pacific Conf. Proc.
+\newcommand{\qjras}{QJRAS}   % Quart. Journal of the Royal Astron. Society
+\newcommand{\sci}{Sci}       % Science
+\newcommand{\solphys}{Solar Physics}       % 
+\newcommand{\sova}{SvA}      % Soviet Astronomy
+\newcommand{\aap}{A\&A}
+
+
+\bibliography{swave}
+\bibliographystyle{mn2e}
+
+
+\label{lastpage}
+
+\end{document}

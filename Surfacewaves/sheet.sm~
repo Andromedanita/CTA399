@@ -1,0 +1,6 @@
+dev x11
+data sheet.dat
+read {x 1 y 2 }
+limits x y
+connect x y
+box

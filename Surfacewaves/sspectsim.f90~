@@ -1,0 +1,5 @@
+integer, parameter :: n=1024,nf=2048
+complex, dimension(n,n) :: cspect
+real, dimension(nf) :: rphase
+
+call random_number(rphase)

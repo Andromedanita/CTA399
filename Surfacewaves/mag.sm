@@ -1,0 +1,18 @@
+dev x11
+dev postencap mag.eps
+expand 1.5
+lweight 2
+erase
+data mag.dat.all
+read { m 1 }
+set mm=abs(m)
+set lx=-3,0,0.1
+set x=10**lx
+set nx=histogram(mm:x)
+set lnx=lg(nx+0.1)
+limits lx lnx
+histogram lx lnx
+ticksize -1 0 -1 0
+box
+xlabel magnification
+ylabel number of images

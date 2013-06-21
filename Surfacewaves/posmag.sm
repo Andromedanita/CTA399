@@ -1,0 +1,25 @@
+dev x11
+dev postencap posmag.eps
+erase
+expand 1.5
+lweight 2
+data posmag.dat.all
+read { x 1 mag 2 }
+set amag=abs(mag)
+smooth amag smag 100
+smooth amag smag10 10
+set rank=1,DIMEN(x)
+set smags=(x<10)?smag10:smag
+#set smags=(rank<100)?amag:smags
+set rank10=0,DIMEN(x)/10-1
+set dx=x[10*rank10+9]-x[10*rank10]+0.001
+smooth dx dxs 20
+set lmag=lg(smags[10*rank10]/dxs)-3
+set lx=lg(x)
+set lx10=lx[10*rank10]
+limits 1 3.3 lmag
+connect lx10 lmag
+ticksize -1 0 -1 0
+box
+xlabel displacement (x)
+ylabel average flux

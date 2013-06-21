@@ -1,0 +1,2 @@
+integer, parameter :: nx=1000,ny=10*nx
+

@@ -1,0 +1,18 @@
+Hi Yuri,
+
+I went through the paper, and tried to address each of your comments.
+
+I also revised several of the figure, so Figure 2 now has the dashed lines
+which makes the zoom more obvious, and I inverted the black-to-white in 
+figures 9 and 10.
+
+In terms of scientific content, I added discussion after (1), that
+the sheets can be either under- or over-dense (citing Pen and King), 
+which is used at several points in the text.
+
+I am enclosing the .tex file and .pdf.  Can you take another read through it,
+and see if it is coherent?
+
+cheers,
+
+Ue-Li

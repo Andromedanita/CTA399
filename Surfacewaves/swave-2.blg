@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2010)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: swave-2.aux
+The style file: mn2e.bst
+Database file #1: swave.bib
+You've used 9 entries,
+            2601 wiz_defined-function locations,
+            611 strings with 5488 characters,
+and the built_in function-call counts, 3904 in all, are:
+= -- 385
+> -- 265
+< -- 8
++ -- 89
+- -- 89
+* -- 369
+:= -- 719
+add.period$ -- 0
+call.type$ -- 9
+change.case$ -- 66
+chr.to.int$ -- 9
+cite$ -- 9
+duplicate$ -- 110
+empty$ -- 160
+format.name$ -- 106
+if$ -- 719
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 9
+newline$ -- 31
+num.names$ -- 38
+pop$ -- 46
+preamble$ -- 1
+purify$ -- 74
+quote$ -- 0
+skip$ -- 135
+stack$ -- 0
+substring$ -- 197
+swap$ -- 17
+text.length$ -- 2
+text.prefix$ -- 29
+top$ -- 0
+type$ -- 81
+warning$ -- 0
+while$ -- 37
+width$ -- 0
+write$ -- 94

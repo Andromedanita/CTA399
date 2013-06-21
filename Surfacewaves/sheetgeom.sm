@@ -1,0 +1,27 @@
+dev x11
+dev postencap sheetgeom.eps
+lweight 2
+ltype 0
+expand 1.5
+window -1 -8 1 8
+data sheet.dat
+lines 15000 17000
+read { y 1 }
+set x=1,DIMEN(y)
+limits -2100 4100 y
+connect x y
+set x=-2000
+set y=2000
+ptype 16 0
+points x y
+set x=4000
+set y=2000
+ptype 6 1
+points x y
+ltype 2
+relocate 4000 2000
+draw -2000 2000
+ltype 1
+relocate 4000 2000
+draw 543 1892.9
+draw -2000 2000

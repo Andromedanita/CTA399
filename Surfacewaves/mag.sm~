@@ -1,0 +1,5 @@
+dev x11
+erase
+data mag.dat
+read { m 1 }
+set mm=abs(m)

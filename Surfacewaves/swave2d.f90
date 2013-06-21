@@ -1,0 +1,164 @@
+! requires -r8 because of the small search step size
+integer, parameter :: nx1=256*4,nx2=nx1,iscale=8*1,ny=iscale*nx1
+real, dimension(ny,nx2) :: dx,r1,r2,rhot
+complex, dimension(ny,nx2) :: cdx
+real, dimension(nx1,nx2) :: rho1,dz,dz2,rhots
+real, dimension(iscale,nx1,nx2) :: rhot2
+equivalence(rhot,rhot2)
+integer nn(2)
+
+nn=(/ny,nx2/)
+
+pi=4*atan(1.)
+call random_seed()
+call random_number(r1)
+call random_number(r2)
+dx=sqrt(-2*log(r1))*cos(2*pi*r2)
+
+write(*,*)'f1',ny,sum(dx**2)/(ny*nx2)
+cdx=dx/ny
+call fourn(cdx,nn,2,1)
+do j=1,ny!/2+1
+   y=j-1
+   if (j>ny/2) y=y-ny
+   do i=1,nx2
+      x=i-1
+      if (i>nx2/2) x=x-nx2
+      dr2=(y)**2+(x*iscale)**2
+      cdx(j,i)=exp(-dr2/(ny/320./4)**2/2)*cdx(j,i)
+!      if (abs(y)<2) cdx(j,i)=cdx(j,i)*2
+   end do
+enddo
+call fourn(cdx,nn,2,-1)
+dx=real(cdx)
+sdx=sqrt(sum(dx**2)/ny)
+dx=dx*20*64/sdx
+write(*,*)'f2',sdx,maxval(abs(dx))
+call pmap('dx.pgm',dx,ny,nx2,1)
+rho1=0
+sigma=1.1
+open(10,file='sheet.dat',access='stream')
+do j=1,ny
+   do i2=1,nx2
+      x0=j/iscale+dx(j,i2)
+!      write(10) x0
+      i0=x0-4*sigma
+      i1=x0+4*sigma
+      do i=i0,i1
+         ii=mod(i+4*nx1-1,nx1)+1
+         rho1(ii,i2)=rho1(ii,i2)+exp(-(i-x0)**2/2/sigma**2)/sigma
+      end do
+   end do
+enddo
+rho1=rho1*nx1/sum(rho1)
+call pmap('rho.pgm',rho1,nx1,nx2,1)
+open(10,file='rho.dat',access='stream')
+!write(10) rho1
+
+rho1=rho1*1000*950
+dz=cshift(rho1,1)-rho1
+dz=(dz+cshift(dz,1,2))/2
+dz2=cshift(rho1,1,2)-rho1
+dz2=(dz2+cshift(dz2,1))/2
+rhots=0
+do i1=2,nx1-1
+   do i2=2,nx2-1
+      phixx=rho1(i1+1,i2)-2*rho1(i1,i2)+rho1(i1-1,i2)
+      phiyy=rho1(i1,i2+1)-2*rho1(i1,i2)+rho1(i1,i2-1)
+      phixy=(rho1(i1+1,i2+1)-rho1(i1-1,i2+1)-rho1(i1+1,i2-1)+rho1(i1-2,i2-1))/4
+      a11=1+phixx
+      a22=1+phiyy
+      a12=phixy
+      rhots(i1,i2)=a11*a22-a12**2
+   end do
+end do
+call pmap('muinv.pgm',rhots,nx1,nx2,1)
+where(abs(rhots)>0.01)
+   rhots=1/rhots
+elsewhere
+   rhots=0
+end where
+call pmap('mu.pgm',rhots,nx1,nx2,2)
+write(*,*) maxval(abs(dz)),maxval(abs(dz2))
+open(10,file='dt.dat',access='stream')
+write(10) dz,dz2
+do i=1,nx1-1
+   do i2=1,nx2
+!      write(10) i+dz(i,i2),i2+dz2(i,i2)
+   enddo
+enddo
+rhot=0
+nred=2
+!$omp parallel do default(private) shared(dz,dz2,nred) reduction(+:rhot)
+do ixi=1,ny*nred
+   xi=(ixi-1.)/nred+1
+!do xi=1,ny-1,0.1
+   i=xi
+   ii=xi/iscale+1
+   if (ii+1>nx1) cycle
+   y=xi/iscale+1   
+   jm=y
+   j0=nint(y)
+   jp=jm+1
+   w=jp-y
+   do ixi2=1,nx2*nred
+      xi2=(ixi2-1.)/nred+1
+!   do xi2=1,nx2-1,0.01
+      im2=xi2
+      ip2=im2+1
+      if (ip2>nx2) cycle
+      i2=nint(xi2)
+      w2=ip2-xi2    
+!   do i2=1,nx2
+      dz1=(w*dz(jm,im2)+(1-w)*dz(jp,im2))*w2+(w*dz(jm,ip2)+(1-w)*dz(jp,ip2))*(1-w2)
+      dzz=(w*dz2(jm,im2)+(1-w)*dz2(jp,im2))*w2+(w*dz2(jm,ip2)+(1-w)*dz2(jp,ip2))*(1-w2)
+      dj=(dz1+y-nx1/2.)**2
+      dj2=(dzz+xi2-nx2/2.)**2
+      dr2=dj+dj2
+      if (dr2>10**2) cycle
+!      akappa=dz(jp,i2)-dz(jm,i2)+(dz2(j0,i2+1)-dz2(j0,i2-1))/2
+!      ak2=dz(jp)-dz(jm)
+      rhot(i,i2)=rhot(i,i2)+1!/(1+ak2)
+   end do
+end do
+rhots=sum(rhot2,1)
+call pmap('image.pgm',rhots,nx1,nx2,1)
+contains
+
+  subroutine pmap(fn,rmap1,nx,ny,iscale)
+  real rmap(nx,ny),rmap1(nx,ny)
+  integer*2, dimension(nx,ny) :: imap
+  integer*1, dimension(nx,ny) :: imap1
+  character(len=*):: fn
+  integer npix,mypos
+
+  npix=min(ny/2-1,nx/2-1,300)
+  
+  
+  rmap=rmap1
+!  write(*,*) 'rms=',sqrt(sum(rmap(nx/2-npix:nx/2+npix,ny/2-npix:ny/2+npix)**2)/npix**2/4)
+  is=iscale ! otherwise end up modifying constants...
+  do while (is > 1)      
+     rmap=sign((sqrt(abs(rmap))),rmap)
+     is=is-1
+  end do
+  rmax=maxval(rmap)
+  rmin=minval(rmap)
+  write(*,*) trim(fn),rmax,rmin
+  imap=255*(rmap-rmin)/(rmax-rmin)
+  imap1=127*(rmap-rmin)/(rmax-rmin)
+  open(10,file=fn)
+  write(10,'(2hP5)')
+  write(10,*)nx,ny
+  write(10,*) 255
+!  write(10,*) 127
+  INQUIRE(UNIT=10, POS=mypos)
+  close(10)
+  open(10,file=fn, access='stream',position='append')
+!  write(10,pos=mypos) int(imap,1)
+  write(10) int(imap,1)
+  close(10)
+end subroutine pmap
+
+
+end program

@@ -1,0 +1,215 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2010.11.2)  18 JUL 2012 15:25
+entering extended mode
+ %&-line parsing enabled.
+**swave-3
+(./swave-3.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
+erman, danish, esperanto, spanish, catalan, galician, estonian, farsi, finnish,
+ french, greek, monogreek, ancientgreek, croatian, hungarian, interlingua, ibyc
+us, indonesian, icelandic, italian, latin, mongolian, dutch, norsk, polish, por
+tuguese, pinyin, romanian, russian, slovenian, uppersorbian, serbian, swedish, 
+turkish, ukenglish, ukrainian, loaded.
+(./mn2e.cls
+Document Class: mn2e 2001/02/06 v2.2 LaTeX2e MN document class
+Document Style `MN' v2.2, released 2001 February 20
+\math@groups=\toks14
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/cmsy/b/n on input line 223.
+\symbmisymbols=\mathgroup4
+\symUPM=\mathgroup5
+LaTeX Font Info:    Overwriting symbol font `UPM' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 260.
+\symAMSa=\mathgroup6
+\SFB@measure=\dimen102
+\realparindent=\skip41
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\@indentskip=\skip42
+\smallindent=\skip43
+\@footindent=\skip44
+\@leftskip=\skip45
+\c@dummy=\count85
+(/usr/share/texmf/tex/latex/natbib/natbib.sty
+Package: natbib 2007/02/05 8.0 (PWD)
+\bibhang=\skip46
+\bibsep=\skip47
+LaTeX Info: Redefining \cite on input line 602.
+\c@NAT@ctr=\count86
+)
+\c@table=\count87
+\c@figure=\count88
+\mathindent=\dimen103
+)
+(/usr/share/texmf/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 90.
+
+(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
+\Gread@gobject=\count89
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+\epsfxsize=\dimen106
+\epsfysize=\dimen107
+)
+(/usr/share/texmf/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2006/08/26 v1.3 Conversion with epstopdf on the fly (HO)
+
+
+Package epstopdf Warning: Shell escape feature is not enabled.
+
+) (/usr/share/texmf/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+) (./swave-3.aux)
+\openout1 = `swave-3.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 25.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 25.
+LaTeX Font Info:    Try loading font information for U+eur on input line 25.
+
+(/usr/share/texmf/tex/latex/amsfonts/ueur.fd
+File: ueur.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 25.
+
+(/usr/share/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 54.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 54.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 54.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 103.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 133.
+
+
+(/usr/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 133.
+ [1{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+] [2]
+system(epstopdf sheet.eps)...disabled.
+
+ <sheet.pdf, id=29, 576.1525pt x 576.1525pt>
+File: sheet.pdf Graphic file (type pdf)
+
+<use sheet.pdf> [3 <./sheet.pdf>]
+Underfull \hbox (badness 5924) in paragraph at lines 320--325
+\OT1/cmr/m/n/9 STILL VERY NON-GAUSSIAN, BUT WITH THE
+ []
+
+
+Underfull \hbox (badness 2726) in paragraph at lines 320--325
+\OT1/cmr/m/n/9 is a highly non-Gaussian dis-tri-bu-tion, and re-sem-bles
+ []
+
+
+Underfull \hbox (badness 1546) in paragraph at lines 320--325
+\OT1/cmr/m/n/9 a Loren-zian, with di-ver-gent mo-ments SO NOT THE
+ []
+
+system(epstopdf rho.eps)...disabled.
+
+<rho.pdf, id=36, 576.1525pt x 576.1525pt>
+File: rho.pdf Graphic file (type pdf)
+ <use rho.pdf>
+system(epstopdf dt.eps)...disabled.
+
+
+<dt.pdf, id=37, 576.1525pt x 576.1525pt>
+File: dt.pdf Graphic file (type pdf)
+ <use dt.pdf>
+<rspect.jpg, id=38, 1027.84pt x 1027.84pt>
+File: rspect.jpg Graphic file (type jpg)
+ <use rspect.jpg>
+<sspect.jpg, id=39, 1027.84pt x 513.92pt>
+File: sspect.jpg Graphic file (type jpg)
+ <use sspect.jpg> [4 <./rho.pdf> <./dt.pdf>] (./swave-3.bbl [5 <./rspect.jpg> <
+./sspect.jpg>]) [6
+
+] (./swave-3.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1276 strings out of 256216
+ 14442 string characters out of 1917072
+ 73090 words of memory out of 1500000
+ 4558 multiletter control sequences out of 10000+200000
+ 16394 words of font info for 57 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 32i,14n,34p,429b,295s stack positions out of 5000i,500n,6000p,200000b,15000s
+</usr/share/texmf/fonts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf/fonts/t
+ype1/bluesky/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx8.pfb><
+/usr/share/texmf/fonts/type1/bluesky/cm/cmbx9.pfb></usr/share/texmf/fonts/type1
+/bluesky/cm/cmex10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb></us
+r/share/texmf/fonts/type1/bluesky/cm/cmmi5.pfb></usr/share/texmf/fonts/type1/bl
+uesky/cm/cmmi6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi9.pfb></usr/sha
+re/texmf/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf/fonts/type1/bluesky
+/cm/cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr5.pfb></usr/share/tex
+mf/fonts/type1/bluesky/cm/cmr6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr
+8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr9.pfb></usr/share/texmf/fonts
+/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy6.pfb
+></usr/share/texmf/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/texmf/fonts/typ
+e1/bluesky/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti12.pfb></u
+sr/share/texmf/fonts/type1/bluesky/cm/cmti9.pfb>
+Output written on swave-3.pdf (6 pages, 1072649 bytes).
+PDF statistics:
+ 119 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 131072)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+

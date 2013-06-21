@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.6)
+The top-level auxiliary file: swave-3.aux
+The style file: mn2e.bst
+Database file #1: swave.bib
+Repeated entry---line 208 of file swave.bib
+ : @article{2004MNRAS.354...43W
+ :                             ,
+I'm skipping whatever remains of this entry
+You've used 13 entries,
+            2601 wiz_defined-function locations,
+            637 strings with 6275 characters,
+and the built_in function-call counts, 5813 in all, are:
+= -- 569
+> -- 421
+< -- 8
++ -- 143
+- -- 143
+* -- 562
+:= -- 1074
+add.period$ -- 0
+call.type$ -- 13
+change.case$ -- 100
+chr.to.int$ -- 13
+cite$ -- 13
+duplicate$ -- 154
+empty$ -- 224
+format.name$ -- 164
+if$ -- 1061
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 13
+newline$ -- 43
+num.names$ -- 54
+pop$ -- 72
+preamble$ -- 1
+purify$ -- 112
+quote$ -- 0
+skip$ -- 193
+stack$ -- 0
+substring$ -- 288
+swap$ -- 21
+text.length$ -- 2
+text.prefix$ -- 47
+top$ -- 0
+type$ -- 117
+warning$ -- 0
+while$ -- 53
+width$ -- 0
+write$ -- 134
+(There was 1 error message)
